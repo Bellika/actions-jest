@@ -1,21 +1,21 @@
 name: Run Jest Tests
 
-on: [push, pull_requests]
+on: [push, pull_request]
 
-jobs:
+jobs: 
   test:
-    runs-on: ubuntu-latest 
+    runs-on: ubuntu-latest
     steps: 
       - name: Checkout repository
         uses: actions/checkout@v3
-      
-      - name: Set up Node.js 
+
+      - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '23'
-
+      
       - name: Install dependencies
         run: npm install
-      
-      -name: Run tests 
+
+      - name: Run tests 
         run: npm test
